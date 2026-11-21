@@ -1,0 +1,41 @@
+WEBVTT
+
+1
+00:00:00.244 --> 00:00:08.490
+A replay of 7 real Kensa runs, recorded with a local model (qwen3:4b) on a 4 GB laptop GPU. Nothing is running now.
+
+2
+00:00:08.493 --> 00:00:12.952
+A built-in sample: "Frontend build fails an environment check".
+
+3
+00:00:12.954 --> 00:00:26.525
+Every claim cites a source line. The verifier found 4 of 4 quotes on their cited lines (1 in the job log, 3 in knowledge-base notes), and the log itself states the cause: "Cause corroborated".
+
+4
+00:00:26.527 --> 00:00:33.555
+A citation of the log opens its line in the stored log; other citations open their evidence excerpt.
+
+5
+00:00:33.557 --> 00:00:37.855
+Fixes are proposals only. Kensa never changes a repository.
+
+6
+00:00:37.857 --> 00:00:43.647
+In the replay, a decision is kept in this browser tab only. Nothing is saved.
+
+7
+00:00:43.653 --> 00:00:49.846
+A failing test is a symptom, so a test regression is at most "Plausible, not confirmed".
+
+8
+00:00:49.849 --> 00:01:02.280
+The model's proposals are shown as produced, mistakes included: 2 of the 5 would change the test instead of the code. Each carries the risk that this hides a real regression.
+
+9
+00:01:02.288 --> 00:01:09.301
+This log does not show the failure, so Kensa does not ask the model to guess: "Not established".
+
+10
+00:01:09.303 --> 00:01:16.003
+The interface is also in Japanese. Recorded model output stays in English.

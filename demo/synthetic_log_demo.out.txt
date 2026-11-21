@@ -1,0 +1,28 @@
+== Redaction
+secrets replaced: {'password': 1}
+
+== Normalised log
+2026-01-05T10:00:01.000Z ##[group]Run pytest -q
+2026-01-05T10:00:02.120Z export DATABASE_URL=postgresql://ci_user:[REDACTED:password]@db.example.invalid:5432/app
+2026-01-05T10:00:03.410Z ============================= test session starts ==============================
+2026-01-05T10:00:09.002Z E   sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection to server at "db.example.invalid" (10.0.0.7), port 5432 failed: Connection refused
+2026-01-05T10:00:09.003Z E   	Is the server running on that host and accepting TCP/IP connections?
+2026-01-05T10:00:09.410Z FAILED tests/test_orders.py::test_create_order - sqlalchemy.exc.OperationalError
+2026-01-05T10:00:09.900Z ========================= 1 failed, 41 passed in 6.21s =========================
+2026-01-05T10:00:10.000Z ##[error]Process completed with exit code 1.
+
+== Signatures
+line 4: db.server -> db_connectivity (weight 3)
+line 4: net.refused -> db_connectivity (weight 1)
+line 4: py.operational -> db_connectivity (weight 1)
+line 5: db.server -> db_connectivity (weight 3)
+line 6: py.operational -> db_connectivity (weight 1)
+line 6: pytest.failed -> test_regression (weight 3)
+line 7: pytest.summary -> test_regression (weight 3)
+line 8: gha.error -> None (weight 1)
+line 8: exit.code -> None (weight 1)
+
+== Rule classification
+category: db_connectivity
+score: 9, share: 0.82, strong: True
+supporting lines: [4, 5, 6]
